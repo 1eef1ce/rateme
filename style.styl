@@ -1,13 +1,22 @@
 font = Verdana, Geneva, sans-serif
 font-size = 1rem
-black = #010101
-lightblue = #bbb9fc
+colorDark = #010101
+colorLight = #bbb9fc
+colorHover = #ff595d
+colorBody = #f7fbfe
+colorTh = #bec3c9
+colorOdd = #f9fafc
+colorEven = #f2f7fb
+colorDropdown = #747373
+colorOrange = #de4a35
+colorTop = #252525
 
 body
   font-size font-size
   font-family font
-  color black
+  color colorDark
   line-height normal
+  background-color colorBody
 
 input
 textarea
@@ -39,7 +48,7 @@ a
     text-decoration none
 
 .main
-  background url("images/bg.png") no-repeat center
+  background url("images/bg.png") no-repeat top center
 
 .bold
   font-weight bold
@@ -47,12 +56,12 @@ a
 .white
   color white
 
-.lightblue
-  color lightblue
+.colorLight
+  color colorLight
 
-.bg-red
-  background-color #ff595d
-
+.orange
+  color colorOrange
+  
 p
   margin-bottom 2rem
 
@@ -70,10 +79,15 @@ h5
   font-size 1.125rem
   border-radius 5px
   padding 16px 20px
-  margin-top 10px
   line-height 1
+  background-color white
+  color colorDark
+  box-shadow 35px 0 70px rgba(84,74,69, 0.31)
   img
     margin-right 11px
+  &:hover
+    background-color colorHover
+    color white
 
 .block-top
   padding 135px 0 36px
@@ -98,12 +112,13 @@ h5
 .nav-link
   padding: 12px
   border-radius 5px !important
-  color black
+  color colorDark
   background-color white
   margin 0 3px
+  box-shadow 35px 0 70px rgba(84,74,69, 0.31)
   &.nav-item
     &:hover
-      background-color #ff595d
+      background-color colorHover
   img
     margin-right 10px
   &:first-of-type
@@ -113,15 +128,20 @@ h5
 
 .nav-pills
   .nav-link.active
-    background-color #ff595d
+    background-color colorHover
   .show>.nav-link
-    color black
+    color colorDark
     background-color white
 
 .dropdown
+  &.nav-item
+    margin 0 5px
+    &:first-of-type
+      margin-left 0
+    &:last-of-type
+      margin-right 0
   .nav-link
     padding 14px
-    margin 0 5px
     text-align left
     &:hover
       color inherit
@@ -129,9 +149,68 @@ h5
       float right
       margin-left 0
       margin-top 0.5em
-  &:first-of-type
-    .nav-link
-      margin-left 0
-  &:last-of-type
-    .nav-link
-      margin-right 0
+
+table
+  thead
+    th
+      text-transform uppercase
+      color colorTh
+      background-color colorEven
+  th
+  td
+    padding 25px 0!important
+    border-top none!important
+    border-bottom none!important
+  tr
+    th
+    td
+      &:first-child
+        border-top-left-radius 5px
+        border-bottom-left-radius 5px
+      &:last-child
+        border-top-right-radius 5px
+        border-bottom-right-radius 5px
+.table-striped
+  tbody
+    tr
+      background-color colorEven
+      &:nth-of-type(odd)
+        background-color colorOdd
+
+.table-hover
+  tbody
+    tr
+      &:hover
+        transform scale(1)
+        color inherit
+        background-color white
+        box-shadow 1px 0 70px rgba(148,184,209,0.31)
+
+.dropdown-menu
+  margin -4px 0 0
+  border 0
+  border-radius 0 0 5px 5px
+  width 100%
+  padding 19px 0 15px
+  box-shadow 35px 43px 70px rgba(84,74,69, 0.31)
+
+.dropdown-item
+  color colorDropdown
+  padding 1rem 2rem
+  &:hover
+  &:focus
+    color colorDark
+    background-color transparent
+
+.top
+  color white
+  background-color colorTop
+  padding 20px 0
+  position fixed
+  top 0
+  width 100%
+  z-index 1
+
+.closeIcon
+  float right
+  cursor pointer
