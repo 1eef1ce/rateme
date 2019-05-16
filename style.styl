@@ -63,7 +63,10 @@ a
   color colorOrange
   
 p
-  margin-bottom 2rem
+  margin-bottom 2.5rem
+
+h3
+  margin-bottom 3.5rem
 
 h5
   font-size 1.125rem
@@ -72,7 +75,7 @@ h5
 .small
   font-size 0.75rem
   text-transform uppercase
-  margin 1.75rem 0 0.75rem
+  margin 0.75rem 0
 
 .download
   display inline-block
@@ -84,10 +87,12 @@ h5
   color colorDark
   box-shadow 35px 0 70px rgba(84,74,69, 0.31)
   img
+    width 18px
     margin-right 11px
   &:hover
     background-color colorHover
     color white
+    transition 0.3s ease-in-out
 
 .block-top
   padding 135px 0 36px
@@ -95,16 +100,16 @@ h5
   margin-bottom 100px
 
 .logo
-  margin-bottom 2.25rem
+  margin-bottom 3.5rem
 
 .block-1
-  margin-bottom 122px
+  margin-bottom 80px
 
 .block-2
   margin-bottom 136px
 
 .block-3
-  margin-bottom 346px
+  margin-bottom 46px
 
 .nav
   margin-bottom 31px
@@ -119,6 +124,7 @@ h5
   &.nav-item
     &:hover
       background-color colorHover
+      transition 0.3s ease-in-out
   img
     margin-right 10px
   &:first-of-type
@@ -214,3 +220,8 @@ table
 .closeIcon
   float right
   cursor pointer
+
+.menu
+  a
+    &:hover
+      color colorHover
