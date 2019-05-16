@@ -1,15 +1,18 @@
-font = Verdana, Geneva, sans-serif
+font = CeraPro
 font-size = 1rem
 colorDark = #010101
 colorLight = #bbb9fc
 colorHover = #ff595d
 colorBody = #f7fbfe
 colorTh = #bec3c9
-colorOdd = #f9fafc
-colorEven = #f2f7fb
 colorDropdown = #747373
 colorOrange = #de4a35
 colorTop = #252525
+
+@font-face
+  font-family CeraPro
+  src url(fonts/CeraPro-Regular.woff2) format('woff2'),
+  url(fonts/CeraPro-Regular.woff) format('woff')
 
 body
   font-size font-size
@@ -49,6 +52,8 @@ a
 
 .main
   background url("images/bg.png") no-repeat top center
+  background-size 100% 70%
+  padding-bottom 100px
 
 .bold
   font-weight bold
@@ -114,30 +119,50 @@ h5
 .nav
   margin-bottom 31px
 
-.nav-link
-  padding: 12px
-  border-radius 5px !important
-  color colorDark
-  background-color white
-  margin 0 3px
-  box-shadow 35px 0 70px rgba(84,74,69, 0.31)
-  &.nav-item
-    &:hover
-      background-color colorHover
-      transition 0.3s ease-in-out
-  img
-    margin-right 10px
-  &:first-of-type
-    margin-left 0
-  &:last-of-type
-    margin-right 0
-
 .nav-pills
-  .nav-link.active
-    background-color colorHover
-  .show>.nav-link
+  .nav-link
+    padding 12px
+    border-radius 5px !important
     color colorDark
     background-color white
+    margin 0 3px
+    box-shadow 35px 0 70px rgba(84,74,69, 0.31)
+    &.nav-item
+      &:hover
+        background-color colorHover
+        transition 0.3s ease-in-out
+    img
+      margin-right 10px
+    &:first-of-type
+      margin-left 0
+    &:last-of-type
+      margin-right 0
+    &.active
+      background-color colorHover
+    &.show>.nav-link
+      color colorDark
+      background-color white
+
+.nav-tabs
+  border-bottom none
+  .nav-item
+    margin 0 3px
+    &:first-of-type
+      margin-left 0
+    &:last-of-type
+      margin-right 0
+    .nav-link
+      padding 12px
+      color colorDark
+      border-bottom 3px solid gainsboro
+      &:focus
+      &:hover
+        border-color transparent transparent colorHover
+        color colorHover
+      &.active
+        color colorHover
+        background-color transparent
+        border-color transparent transparent colorHover
 
 .dropdown
   &.nav-item
@@ -157,31 +182,14 @@ h5
       margin-top 0.5em
 
 table
+  background-color white
   thead
     th
       text-transform uppercase
       color colorTh
-      background-color colorEven
   th
   td
     padding 25px 0!important
-    border-top none!important
-    border-bottom none!important
-  tr
-    th
-    td
-      &:first-child
-        border-top-left-radius 5px
-        border-bottom-left-radius 5px
-      &:last-child
-        border-top-right-radius 5px
-        border-bottom-right-radius 5px
-.table-striped
-  tbody
-    tr
-      background-color colorEven
-      &:nth-of-type(odd)
-        background-color colorOdd
 
 .table-hover
   tbody
@@ -191,6 +199,10 @@ table
         color inherit
         background-color white
         box-shadow 1px 0 70px rgba(148,184,209,0.31)
+      td
+        img
+          margin-right 10px
+          max-height 22px
 
 .dropdown-menu
   margin -4px 0 0
@@ -225,3 +237,6 @@ table
   a
     &:hover
       color colorHover
+
+.tab-content
+  margin-bottom 3rem
